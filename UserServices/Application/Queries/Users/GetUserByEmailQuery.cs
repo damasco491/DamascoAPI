@@ -36,7 +36,6 @@ namespace UserServices.Application.Queries.Users
                 var dbParams = new DynamicParameters();
                 dbParams.Add("email", request.Email);
                 results = await _repositoryService.GetJsonPathAsyncV2<UserGVM>(StoredProcedures.UserSP.GET_USER_BY_EMAIL, dbParams);
-
                 var res = results;
             }
             catch (Exception ex)
